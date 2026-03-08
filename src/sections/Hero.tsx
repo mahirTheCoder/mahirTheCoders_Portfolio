@@ -33,11 +33,19 @@ function ProfileSphere() {
       </mesh>
       <mesh rotation={[Math.PI / 2, 0, 0]}>
         <torusGeometry args={[2.0, 0.012, 16, 100]} />
-        <meshStandardMaterial color="#00d4ff" emissive="#00d4ff" emissiveIntensity={1.5} />
+        <meshStandardMaterial
+          color="#00d4ff"
+          emissive="#00d4ff"
+          emissiveIntensity={1.5}
+        />
       </mesh>
       <mesh rotation={[Math.PI / 3, 0.5, 0]}>
         <torusGeometry args={[2.2, 0.008, 16, 100]} />
-        <meshStandardMaterial color="#7c3aed" emissive="#7c3aed" emissiveIntensity={1.5} />
+        <meshStandardMaterial
+          color="#7c3aed"
+          emissive="#7c3aed"
+          emissiveIntensity={1.5}
+        />
       </mesh>
     </Float>
   );
@@ -59,9 +67,20 @@ function OrbitParticles() {
         const angle = (i / 12) * Math.PI * 2;
         const radius = 2.8;
         return (
-          <mesh key={i} position={[Math.cos(angle) * radius, Math.sin(angle * 0.5) * 0.3, Math.sin(angle) * radius]}>
+          <mesh
+            key={i}
+            position={[
+              Math.cos(angle) * radius,
+              Math.sin(angle * 0.5) * 0.3,
+              Math.sin(angle) * radius,
+            ]}
+          >
             <sphereGeometry args={[0.04, 8, 8]} />
-            <meshStandardMaterial color="#00d4ff" emissive="#00d4ff" emissiveIntensity={3} />
+            <meshStandardMaterial
+              color="#00d4ff"
+              emissive="#00d4ff"
+              emissiveIntensity={3}
+            />
           </mesh>
         );
       })}
@@ -70,7 +89,12 @@ function OrbitParticles() {
 }
 
 /* ---- Typing animation hook ---- */
-const roles = ["React Developer", "Frontend Engineer", "UI/UX Enthusiast", "Full Stack Explorer"];
+const roles = [
+  "React Developer",
+  "Frontend Engineer",
+  "UI/UX Enthusiast",
+  "Full Stack Explorer",
+];
 
 function useTyping() {
   const [text, setText] = useState("");
@@ -80,24 +104,27 @@ function useTyping() {
 
   useEffect(() => {
     const current = roles[roleIdx];
-    const timeout = setTimeout(() => {
-      if (!deleting) {
-        if (charIdx < current.length) {
-          setText(current.slice(0, charIdx + 1));
-          setCharIdx((c) => c + 1);
+    const timeout = setTimeout(
+      () => {
+        if (!deleting) {
+          if (charIdx < current.length) {
+            setText(current.slice(0, charIdx + 1));
+            setCharIdx((c) => c + 1);
+          } else {
+            setTimeout(() => setDeleting(true), 1600);
+          }
         } else {
-          setTimeout(() => setDeleting(true), 1600);
+          if (charIdx > 0) {
+            setText(current.slice(0, charIdx - 1));
+            setCharIdx((c) => c - 1);
+          } else {
+            setDeleting(false);
+            setRoleIdx((r) => (r + 1) % roles.length);
+          }
         }
-      } else {
-        if (charIdx > 0) {
-          setText(current.slice(0, charIdx - 1));
-          setCharIdx((c) => c - 1);
-        } else {
-          setDeleting(false);
-          setRoleIdx((r) => (r + 1) % roles.length);
-        }
-      }
-    }, deleting ? 38 : 78);
+      },
+      deleting ? 38 : 78,
+    );
     return () => clearTimeout(timeout);
   }, [charIdx, deleting, roleIdx]);
 
@@ -106,17 +133,41 @@ function useTyping() {
 
 /* ---- Floating badges around profile ---- */
 const badges = [
-  { label: "React",      pos: "top",   color: "hsl(var(--primary))",    border: "hsl(var(--primary) / 0.4)",    anim: "badge-float-1" },
-  { label: "Node.js", pos: "right",  color: "hsl(var(--secondary))",  border: "hsl(var(--secondary) / 0.4)", anim: "badge-float-2" },
-  { label: "Tailwind",   pos: "bottom", color: "hsl(192 80% 60%)",       border: "hsl(192 80% 60% / 0.4)",      anim: "badge-float-3" },
-  { label: "Next.js",    pos: "left",   color: "hsl(var(--secondary))",         border: "hsl(0 0% 75% / 0.3)",         anim: "badge-float-4" },
+  {
+    label: "React",
+    pos: "top",
+    color: "hsl(var(--primary))",
+    border: "hsl(var(--primary) / 0.4)",
+    anim: "badge-float-1",
+  },
+  {
+    label: "Node.js",
+    pos: "right",
+    color: "hsl(var(--secondary))",
+    border: "hsl(var(--secondary) / 0.4)",
+    anim: "badge-float-2",
+  },
+  {
+    label: "Tailwind",
+    pos: "bottom",
+    color: "hsl(192 80% 60%)",
+    border: "hsl(192 80% 60% / 0.4)",
+    anim: "badge-float-3",
+  },
+  {
+    label: "Next.js",
+    pos: "left",
+    color: "hsl(var(--secondary))",
+    border: "hsl(0 0% 75% / 0.3)",
+    anim: "badge-float-4",
+  },
 ];
 
 const badgePos: Record<string, React.CSSProperties> = {
-  top:    { top: "-14px",  left: "40%",  transform: "translateX(-50%)" },
-  right:  { top: "50%",   right: "-48px", transform: "translateY(-50%)" },
+  top: { top: "-14px", left: "40%", transform: "translateX(-50%)" },
+  right: { top: "50%", right: "-48px", transform: "translateY(-50%)" },
   bottom: { bottom: "-14px", left: "40%", transform: "translateX(-50%)" },
-  left:   { top: "50%",   left: "-48px", transform: "translateY(-50%)" },
+  left: { top: "50%", left: "-48px", transform: "translateY(-50%)" },
 };
 
 /* ---- Hero Section ---- */
@@ -133,20 +184,24 @@ export default function Hero() {
       <div
         className="absolute inset-0 opacity-[0.02]"
         style={{
-          backgroundImage: "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
+          backgroundImage:
+            "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
           backgroundSize: "80px 80px",
         }}
       />
 
       {/* Ambient gradients */}
-      <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] rounded-full blur-[130px] opacity-[0.06] pointer-events-none"
-        style={{ background: "hsl(var(--primary))" }} />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full blur-[110px] opacity-[0.05] pointer-events-none"
-        style={{ background: "hsl(var(--secondary))" }} />
+      <div
+        className="absolute top-1/4 left-1/3 w-[500px] h-[500px] rounded-full blur-[130px] opacity-[0.06] pointer-events-none"
+        style={{ background: "hsl(var(--primary))" }}
+      />
+      <div
+        className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full blur-[110px] opacity-[0.05] pointer-events-none"
+        style={{ background: "hsl(var(--secondary))" }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-28 pb-16">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-
           {/* Left — Text */}
           <div className="order-1 lg:order-1">
             {/* Status badge */}
@@ -196,8 +251,9 @@ export default function Hero() {
               transition={{ delay: 0.6, duration: 0.6 }}
               className="text-muted-foreground text-lg leading-relaxed max-w-lg mb-8"
             >
-              I create beautiful, and high performance web experiences with React. 
-              Passionate about turning complex ideas into clean, interactive UIs that users love.
+              I create beautiful, and high performance web experiences with
+              React. Passionate about turning complex ideas into clean,
+              interactive UIs that users love.
             </motion.p>
 
             {/* CTA buttons */}
@@ -209,7 +265,12 @@ export default function Hero() {
             >
               <a
                 href="#projects"
-                onClick={(e) => { e.preventDefault(); document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }); }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById("projects")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="btn-neon px-8 py-3 rounded-xl font-medium text-sm inline-block cursor-pointer"
                 style={{ color: "hsl(var(--primary))" }}
               >
@@ -217,10 +278,16 @@ export default function Hero() {
               </a>
               <a
                 href="#contact"
-                onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="px-8 py-3 rounded-xl font-medium text-sm inline-block cursor-pointer transition-all hover:scale-105 hover:opacity-90"
                 style={{
-                  background: "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)))",
+                  background:
+                    "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)))",
                   color: "hsl(var(--primary-foreground))",
                   boxShadow: "0 4px 24px hsl(var(--primary) / 0.25)",
                 }}
@@ -238,7 +305,7 @@ export default function Hero() {
             >
               {[
                 { value: "15+", label: "Projects Built" },
-                { value: "2+",  label: "Years Coding" },
+                { value: "2+", label: "Years Coding" },
                 { value: "10+", label: "Tech Skills" },
               ].map((stat, i) => (
                 <motion.div
@@ -246,8 +313,12 @@ export default function Hero() {
                   whileHover={{ y: -3 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="gradient-text font-display font-bold text-2xl">{stat.value}</div>
-                  <div className="text-muted-foreground text-xs mt-0.5">{stat.label}</div>
+                  <div className="gradient-text font-display font-bold text-2xl">
+                    {stat.value}
+                  </div>
+                  <div className="text-muted-foreground text-xs mt-0.5">
+                    {stat.label}
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
@@ -263,20 +334,29 @@ export default function Hero() {
             <div className="relative">
               <div className="relative w-64 h-64 md:w-80 md:h-80">
                 {/* Spinning rings */}
-                <div className="absolute inset-0 rounded-full animate-[rotate-slow_18s_linear_infinite]"
-                  style={{ border: "1px dashed hsl(var(--primary) / 0.25)" }} />
-                <div className="absolute -inset-8 rounded-full animate-[rotate-slow_30s_linear_infinite_reverse]"
-                  style={{ border: "1px dashed hsl(var(--secondary) / 0.18)" }} />
+                <div
+                  className="absolute inset-0 rounded-full animate-[rotate-slow_18s_linear_infinite]"
+                  style={{ border: "1px dashed hsl(var(--primary) / 0.25)" }}
+                />
+                <div
+                  className="absolute -inset-8 rounded-full animate-[rotate-slow_30s_linear_infinite_reverse]"
+                  style={{ border: "1px dashed hsl(var(--secondary) / 0.18)" }}
+                />
 
                 {/* Profile image */}
                 <div
                   className="absolute inset-4 rounded-full overflow-hidden"
                   style={{
                     border: "2px solid hsl(var(--primary) / 0.5)",
-                    boxShadow: "0 0 40px hsl(var(--primary) / 0.25), 0 0 80px hsl(var(--primary) / 0.08)",
+                    boxShadow:
+                      "0 0 40px hsl(var(--primary) / 0.25), 0 0 80px hsl(var(--primary) / 0.08)",
                   }}
                 >
-                  <img src={profileImg} alt="mahirTheCoder" className="w-full h-full object-cover" />
+                  <img
+                    src={profileImg}
+                    alt="mahirTheCoder"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 {/* Floating badges */}
@@ -301,14 +381,36 @@ export default function Hero() {
               {/* 3D canvas behind */}
               <div
                 className="absolute -z-10"
-                style={{ width: 340, height: 340, left: "50%", top: "50%", transform: "translate(-50%,-50%)" }}
+                style={{
+                  width: 340,
+                  height: 340,
+                  left: "50%",
+                  top: "50%",
+                  transform: "translate(-50%,-50%)",
+                }}
               >
                 <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
                   <ambientLight intensity={0.3} />
-                  <pointLight position={[5, 5, 5]} color="#00d4ff" intensity={1.2} />
-                  <pointLight position={[-5, -5, -5]} color="#7c3aed" intensity={0.8} />
+                  <pointLight
+                    position={[5, 5, 5]}
+                    color="#00d4ff"
+                    intensity={1.2}
+                  />
+                  <pointLight
+                    position={[-5, -5, -5]}
+                    color="#7c3aed"
+                    intensity={0.8}
+                  />
                   <Suspense fallback={null}>
-                    <Stars radius={80} depth={50} count={800} factor={2} saturation={0} fade speed={1} />
+                    <Stars
+                      radius={80}
+                      depth={50}
+                      count={800}
+                      factor={2}
+                      saturation={0}
+                      fade
+                      speed={1}
+                    />
                     <ProfileSphere />
                     <OrbitParticles />
                   </Suspense>
@@ -321,12 +423,15 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8  left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 
+             hidden md:flex" 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.3 }}
       >
-        <span className="text-muted-foreground text-xs font-mono tracking-wider">scroll</span>
+        <span className="text-muted-foreground text-xs font-mono tracking-wider">
+          scroll
+        </span>
         <motion.div
           className="w-5 h-8 rounded-full flex justify-center pt-1.5"
           style={{ border: "1px solid hsl(var(--primary) / 0.35)" }}
