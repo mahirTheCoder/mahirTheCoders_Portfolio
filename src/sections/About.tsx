@@ -5,7 +5,7 @@ import SectionHeading from "@/components/SectionHeading";
 import SkillsDisplay from "@/components/SkillsDisplay";
 import profileImg from "@/assets/profile.jpg";
 
-// ─── Data ─────────────────────────────────────────────────────────────────────
+// ------------data
 const stats = [
   { value: "10+", label: "Projects Shipped"  },
   { value: "1+",  label: "Years Experience"  },
@@ -42,7 +42,7 @@ const timeline = [
   },
 ];
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
+// -----------animations
 const fadeUp = (delay = 0) => ({
   initial:     { opacity: 0, y: 28 },
   whileInView: { opacity: 1, y: 0  },

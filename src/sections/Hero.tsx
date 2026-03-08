@@ -421,10 +421,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 
-             hidden md:flex" 
+        className="absolute bottom-8 left-1/2 translate-x-1/2 flex flex-col items-center gap-2 hidden md:flex"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.3 }}
@@ -432,13 +431,10 @@ export default function Hero() {
         <span className="text-muted-foreground text-xs font-mono tracking-wider">
           scroll
         </span>
-        <motion.div
-          className="w-5 h-8 rounded-full flex justify-center pt-1.5"
-          style={{ border: "1px solid hsl(var(--primary) / 0.35)" }}
-        >
+
+        <motion.div className="w-5 h-8 rounded-full flex justify-center pt-1.5 border border-primary/35">
           <motion.div
-            className="w-1 h-2 rounded-full"
-            style={{ background: "hsl(var(--primary))" }}
+            className="w-1 h-2 rounded-full bg-primary"
             animate={{ y: [0, 14, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
           />
