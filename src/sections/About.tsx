@@ -7,8 +7,8 @@ import profileImg from "@/assets/profile.jpg";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const stats = [
-  { value: "15+", label: "Projects Shipped"  },
-  { value: "2+",  label: "Years Experience"  },
+  { value: "10+", label: "Projects Shipped"  },
+  { value: "1+",  label: "Years Experience"  },
   { value: "10+", label: "Happy Clients"     },
   { value: "99%", label: "On-time Delivery"  },
 ];
@@ -64,7 +64,7 @@ const fadeRight = (delay = 0) => ({
   transition:  { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] as const },
 });
 
-// ─── Component ────────────────────────────────────────────────────────────────
+// ---------components
 export default function About() {
   return (
     <SectionWrapper id="about">
@@ -75,9 +75,7 @@ export default function About() {
         subtitle="React specialist · UI engineer · 3D web enthusiast — building experiences that are fast, accessible, and unforgettable."
       />
 
-      {/* ════════════════════════════════════════════════════════════
-          SECTION 1 — Photo column + Bio column
-      ════════════════════════════════════════════════════════════ */}
+   {/* ---------photo album */}
       <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center mb-20">
 
         {/* ── Left: Photo block ── */}
@@ -182,7 +180,7 @@ export default function About() {
                 boxShadow: "0 4px 20px hsl(var(--primary) / 0.15)",
               }}
             >
-              ⚡ 15+ Projects
+              ⚡ 10+ Projects
             </motion.div>
           </div>
         </motion.div>
@@ -256,9 +254,7 @@ export default function About() {
         </motion.div>
       </div>
 
-      {/* ════════════════════════════════════════════════════════════
-          SECTION 2 — Stats strip
-      ════════════════════════════════════════════════════════════ */}
+    {/* --------------section two  */}
       <motion.div
         {...fadeUp(0)}
         className="glass-card rounded-2xl mb-20"
@@ -288,9 +284,7 @@ export default function About() {
         </div>
       </motion.div>
 
-      {/* ════════════════════════════════════════════════════════════
-          SECTION 3 — Timeline + Skills side by side
-      ════════════════════════════════════════════════════════════ */}
+   {/* -----------section three  */}
       <div className="grid lg:grid-cols-2 gap-10 mb-20 items-start">
 
         {/* Timeline */}

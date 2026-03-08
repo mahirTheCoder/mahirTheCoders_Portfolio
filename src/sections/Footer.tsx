@@ -108,7 +108,9 @@ export default function Footer() {
             <Heart size={13} className="inline" style={{ color: "hsl(0 80% 60%)" }} fill="hsl(0 80% 60%)" />
             in React.
           </p>
-          <motion.button
+
+
+          {/* <motion.button
             onClick={scrollTop}
             whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.92 }}
@@ -117,7 +119,10 @@ export default function Footer() {
             title="Back to top"
           >
             <ArrowUp size={16} />
-          </motion.button>
+            
+          </motion.button> */}
+
+
         </div>
       </div>
     </footer>

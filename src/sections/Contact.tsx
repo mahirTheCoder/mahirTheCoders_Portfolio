@@ -11,7 +11,7 @@ const socials = [
 ];
 
 const contactInfo = [
-  { icon: Mail,   label: "Email",    value: "mahirthecoder.bd@thecoder.dev",  color: "hsl(var(--primary))" },
+  { icon: Mail,   label: "Email",    value: "mahirthecoder.bd@gmail.com",  color: "hsl(var(--primary))" },
   { icon: MapPin, label: "Location", value: "Remote — Worldwide",  color: "hsl(var(--secondary))" },
 ];
 

@@ -113,9 +113,9 @@ const badges = [
 ];
 
 const badgePos: Record<string, React.CSSProperties> = {
-  top:    { top: "-14px",  left: "50%",  transform: "translateX(-50%)" },
+  top:    { top: "-14px",  left: "40%",  transform: "translateX(-50%)" },
   right:  { top: "50%",   right: "-48px", transform: "translateY(-50%)" },
-  bottom: { bottom: "-14px", left: "50%", transform: "translateX(-50%)" },
+  bottom: { bottom: "-14px", left: "40%", transform: "translateX(-50%)" },
   left:   { top: "50%",   left: "-48px", transform: "translateY(-50%)" },
 };
 
@@ -196,7 +196,7 @@ export default function Hero() {
               transition={{ delay: 0.6, duration: 0.6 }}
               className="text-muted-foreground text-lg leading-relaxed max-w-lg mb-8"
             >
-              I craft beautiful, performant web experiences with React. 
+              I create beautiful, and high performance web experiences with React. 
               Passionate about turning complex ideas into clean, interactive UIs that users love.
             </motion.p>
 
@@ -321,7 +321,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-8  left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.3 }}
