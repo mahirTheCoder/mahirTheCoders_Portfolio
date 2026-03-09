@@ -54,83 +54,136 @@ export default function About() {
         subtitle="React Developer · Frontend Developer · UI/UX Enthusiast — building fast, accessible, and modern web experiences."
       />
 
-      {/* ---------photo + bio */}
-      <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center mb-20">
+         <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center mb-20">
 
-        {/* Photo */}
-        <motion.div
-          {...fadeLeft(0)}
-          className="flex justify-center lg:justify-end order-2 lg:order-1"
-        >
+        {/* ── Left: Photo block ── */}
+        <motion.div {...fadeLeft(0)} className="flex justify-center lg:justify-end order-2 lg:order-1">
           <div className="relative">
-
+            {/* Decorative accent blobs */}
             <div
               className="absolute -inset-6 rounded-3xl opacity-20 blur-2xl"
               style={{ background: "var(--gradient-primary)" }}
             />
+            <div
+              className="absolute -top-3 -right-3 w-24 h-24 rounded-2xl"
+              style={{
+                background: "hsl(var(--primary) / 0.08)",
+                border: "1px solid hsl(var(--primary) / 0.2)",
+              }}
+            />
+            <div
+              className="absolute -bottom-3 -left-3 w-16 h-16 rounded-xl"
+              style={{
+                background: "hsl(var(--secondary) / 0.08)",
+                border: "1px solid hsl(var(--secondary) / 0.2)",
+              }}
+            />
 
+            {/* Photo frame */}
             <motion.div
               className="relative w-72 h-80 sm:w-80 sm:h-96 rounded-2xl overflow-hidden"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.35 }}
+              style={{
+                boxShadow: "0 20px 60px hsl(var(--primary) / 0.2), 0 4px 16px hsl(0 0% 0% / 0.15)",
+              }}
             >
               <img
                 src={profileImg}
-                alt="Mahir Chowdhury React Developer"
+                alt="mahirTheCoder — React Developer"
                 className="w-full h-full object-cover"
-                style={{ filter: "brightness(0.75)" }}
+                style={{ filter: "brightness(0.72)" }}
               />
-
-              <div className="absolute inset-0 bg-black/25" />
-
+              {/* Darkening overlay */}
+              <div className="absolute inset-0" style={{ background: "hsl(0 0% 0% / 0.25)" }} />
+              {/* Subtle gradient overlay */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to top, hsl(var(--background) / 0.5) 0%, transparent 50%)",
+                }}
+              />
+              {/* Name badge pinned to bottom */}
               <div className="absolute bottom-0 left-0 right-0 p-4">
-                <div className="rounded-xl px-4 py-3 backdrop-blur-md bg-background/70 border border-border">
-                  <p className="font-bold text-base text-foreground">
+                <div
+                  className="rounded-xl px-4 py-3 backdrop-blur-md"
+                  style={{
+                    background: "hsl(var(--background) / 0.75)",
+                    border: "1px solid hsl(var(--border) / 0.6)",
+                  }}
+                >
+                  <p className="font-display font-bold text-base text-foreground leading-none">
                     mahirTheCoder
                   </p>
-                  <p className="text-xs text-primary">
-                    React Developer · UI Engineer
+                  <p
+                    className="text-xs font-mono mt-0.5"
+                    style={{ color: "hsl(var(--primary))" }}
+                  >
+                    React Developer and next.js Developer
                   </p>
                 </div>
               </div>
             </motion.div>
+            
 
-            {/* Availability */}
-            <div className="absolute -top-4 -left-4 flex items-center gap-2 px-3 py-2 rounded-full text-xs font-semibold bg-card border border-green-400/40 text-green-600 shadow-lg">
+            {/* Availability pill — floating */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute -top-4 -left-4 flex items-center gap-2 px-3 py-2 rounded-full text-xs font-semibold shadow-lg"
+              style={{
+                background: "hsl(var(--card))",
+                border: "1px solid hsl(142 70% 40% / 0.4)",
+                color: "hsl(142 70% 38%)",
+                boxShadow: "0 4px 20px hsl(142 70% 40% / 0.18)",
+              }}
+            >
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               Open to Work
-            </div>
+            </motion.div>
 
-            {/* Projects */}
-            <div className="absolute -bottom-4 -right-4 flex items-center gap-2 px-3 py-2 rounded-full text-xs font-semibold bg-card border border-primary/40 text-primary shadow-lg">
+            {/* Projects pill — floating */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute -bottom-4 -right-4 flex items-center gap-2 px-3 py-2 rounded-full text-xs font-semibold shadow-lg"
+              style={{
+                background: "hsl(var(--card))",
+                border: "1px solid hsl(var(--primary) / 0.35)",
+                color: "hsl(var(--primary))",
+                boxShadow: "0 4px 20px hsl(var(--primary) / 0.15)",
+              }}
+            >
               ⚡ 10+ Projects
-            </div>
+            </motion.div>
           </div>
         </motion.div>
 
-        {/* Bio */}
+        {/* ── Right: Bio content ── */}
         <motion.div {...fadeRight(0.1)} className="space-y-6 order-1 lg:order-2">
-
+          {/* Intro text */}
           <div>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-muted-foreground text-base leading-relaxed mb-4">
               Hey there — I'm a{" "}
-              <span className="gradient-text font-semibold">
-                React developer
-              </span>{" "}
-              passionate about building modern, responsive, and user-friendly
-              web applications.
+              <span className="gradient-text font-semibold">React developer</span> who lives at the
+              intersection of designing. I transform complex ideas into elegant, fast,
+              and accessible web experiences.
             </p>
-
-            <p className="text-muted-foreground">
-              I focus on{" "}
-              <span className="text-foreground font-medium">
-                frontend development
-              </span>
-              , clean UI design, and smooth user experiences.
+            <p className="text-muted-foreground text-base leading-relaxed">
+              With a deep focus on{" "}
+              <span className="text-foreground font-medium">frontend performance</span>,{" "}
+              <span className="text-foreground font-medium">clean architecture</span>, and{" "}
+              <span className="text-foreground font-medium">delightful UI</span>, I bring both
+              technical rigour and a designer's eye to every project I ship.
             </p>
           </div>
 
-          {/* highlights */}
+          {/* Highlights checklist */}
           <ul className="space-y-2.5">
             {highlights.map((item, i) => (
               <motion.li
@@ -138,29 +191,40 @@ export default function About() {
                 initial={{ opacity: 0, x: 16 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.07 }}
+                transition={{ delay: i * 0.07 + 0.15, duration: 0.42, ease: "easeOut" }}
                 className="flex items-start gap-3 text-sm text-muted-foreground"
               >
-                <CheckCircle2 size={15} className="text-primary mt-0.5" />
+                <CheckCircle2
+                  size={15}
+                  className="shrink-0 mt-0.5"
+                  style={{ color: "hsl(var(--primary))" }}
+                />
                 {item}
               </motion.li>
             ))}
           </ul>
 
-          {/* buttons */}
-          <div className="flex gap-3 pt-2">
+          {/* CTA buttons */}
+          <div className="flex flex-wrap gap-3 pt-2">
             <motion.a
               href="#contact"
-              whileHover={{ y: -2 }}
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-primary text-primary-foreground"
+              whileHover={{ y: -2, scale: 1.02 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.18 }}
+              className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold"
+              style={{
+                background: "hsl(var(--primary))",
+                color: "hsl(var(--primary-foreground))",
+                boxShadow: "0 4px 18px hsl(var(--primary) / 0.35)",
+              }}
             >
               Hire Me <ArrowUpRight size={14} />
             </motion.a>
-
             <motion.a
-              href="/cv.pdf"
-              download
+              href="#"
               whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.18 }}
               className="btn-neon flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold"
             >
               Download CV <Download size={14} />
