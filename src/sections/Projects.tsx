@@ -247,7 +247,7 @@ export default function Projects() {
   return (
     <SectionWrapper id="projects">
       <SectionHeading
-        tag="// projects"
+        tag=" projects"
         title="What I've"
         highlight="Built"
         subtitle="A collection of projects that showcase my skills, creativity, and passion for great software."

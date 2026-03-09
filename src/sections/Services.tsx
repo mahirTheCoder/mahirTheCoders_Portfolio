@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { Monitor, Palette, Zap, Code2, Globe, Layers } from "lucide-react";
+import { Palette, Zap, Code2, Globe, Layers } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
-
+import { SiReact } from "react-icons/si"; 
 const services = [
   {
-    icon: Monitor,
+    icon: SiReact,
     title: "React Development",
     desc: "Building scalable, performant React applications with modern patterns, hooks, and best practices.",
     color: "hsl(192 100% 50%)",
@@ -28,23 +28,23 @@ const services = [
   {
     icon: Code2,
     title: "TypeScript Integration",
-    desc: "Migrating JavaScript projects to TypeScript and building type-safe, maintainable codebases.",
+    desc: "Starting to migrate JavaScript projects to TypeScript for type safety and maintainable code.",
     color: "hsl(216 80% 58%)",
-    features: ["Type Safety", "Interfaces & Generics", "JSDoc Migration", "Strict Mode"],
+    features: ["Type Safety", "Interfaces & Generics (learning)"],
   },
   {
     icon: Globe,
     title: "API Integration",
-    desc: "Seamlessly integrating REST and GraphQL APIs, handling auth flows, and managing server state.",
+    desc: "Learning to integrate REST APIs with React; currently exploring authentication and server calls.",
     color: "hsl(142 70% 45%)",
-    features: ["REST / GraphQL", "Authentication", "React Query", "Error Handling"],
+    features: ["REST API Basics", "Fetch / Axios", "Error Handling (learning)"],
   },
-  {
+ {
     icon: Layers,
     title: "Frontend Architecture",
-    desc: "Designing scalable folder structures, monorepos, and CI/CD pipelines for growing teams.",
+    desc: "Understanding scalable folder structures, reusable components, and basic project setups.",
     color: "hsl(340 80% 55%)",
-    features: ["Monorepos", "CI/CD Setup", "Testing (Vitest)", "Code Reviews"],
+    features: ["Folder Structure", "Reusable Components", "Basic CI/CD Concepts"],
   },
 ];
 

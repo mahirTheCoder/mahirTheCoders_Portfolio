@@ -105,7 +105,7 @@ export default function Testimonials() {
   return (
     <SectionWrapper id="testimonials">
       <SectionHeading
-        tag="// testimonials"
+        tag=" testimonials"
         title="What Clients"
         highlight="Say"
         subtitle="Don't take my word for it — hear from people I've worked with."

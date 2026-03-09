@@ -91,7 +91,7 @@ function OrbitParticles() {
 /* ---- Typing animation hook ---- */
 const roles = [
   "React Developer",
-  "Frontend Engineer",
+  "Frontend Developer",
   "UI/UX Enthusiast",
   "Full Stack Explorer",
 ];
@@ -177,7 +177,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative  min-h-screen flex items-center overflow-hidden"
       style={{ background: "var(--gradient-hero)" }}
     >
       {/* Faint grid overlay */}
@@ -304,7 +304,7 @@ export default function Hero() {
               className="flex gap-8"
             >
               {[
-                { value: "15+", label: "Projects Built" },
+                { value: "10+", label: "Projects Built" },
                 { value: "2+", label: "Years Coding" },
                 { value: "10+", label: "Tech Skills" },
               ].map((stat, i) => (
@@ -423,7 +423,7 @@ export default function Hero() {
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 translate-x-1/2 flex flex-col items-center gap-2 hidden md:flex"
+        className="absolute bottom-8 left-1/2 translate-x-1/2 flex flex-col items-center gap-2 hidden lg:flex"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.3 }}

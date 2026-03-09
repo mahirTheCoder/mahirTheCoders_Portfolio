@@ -5,60 +5,59 @@ import SectionHeading from "@/components/SectionHeading";
 
 const experiences = [
   {
-    period: "2024 – Present",
+    period: "2026 – Present",
     role: "Freelance React Developer",
     company: "Self-Employed",
     type: "work",
     achievements: [
-      "Delivered 10+ client projects across SaaS, e-commerce, and portfolios",
-      "Built custom design systems reducing development time by 40%",
-      "Maintained 100% client satisfaction rate with on-time delivery",
+      "Built small React projects and landing pages for practice",
+      "Experimented with Tailwind and Next.js for UI improvements",
+      "Gained experience in responsive and modern frontend design",
     ],
     stack: ["React", "TypeScript", "Tailwind", "Next.js"],
   },
   {
-    period: "2023 – 2024",
+    period: "2025",
     role: "Frontend Developer Intern",
-    company: "Tech Startup",
+    company: "Creative IT",
     type: "work",
     achievements: [
-      "Refactored legacy class components to modern functional React with hooks",
-      "Improved app performance by 35% through code splitting and memoisation",
-      "Built a reusable UI library used across 3 products",
+      "Learned React fundamentals during internship",
+      "Contributed to minor projects / small components",
+      "Explored Redux, basic testing, and UI improvements",
     ],
-    stack: ["React", "Redux", "Jest", "Storybook"],
+    stack: ["React", "Redux", "JavaScript", "CSS"],
   },
   {
-    period: "2023",
+    period: "2025",
     role: "React Developer Certificate",
-    company: "freeCodeCamp",
+    company: "Creative IT",
     type: "award",
     achievements: [
       "Completed full React certification curriculum",
-      "Built 5 certification projects with passing grades",
-      "Mastered hooks, context, and state management patterns",
+      "Built 5 small projects to practice React concepts",
+      "Learned hooks, context, and basic state management",
     ],
-    stack: ["React", "JavaScript", "CSS", "APIs"],
+    stack: ["React", "JavaScript", "CSS"],
   },
   {
-    period: "2022 – 2023",
+    period: "20230 – 2024",
     role: "Self-taught Web Developer",
     company: "Personal Projects",
     type: "work",
     achievements: [
       "Learned HTML, CSS, JavaScript, and React from scratch",
-      "Built 15+ projects published on GitHub",
-      "Gained deep understanding of browser rendering and performance",
+      "Built 10+ projects on GitHub for learning",
+      "Gained understanding of frontend basics and responsive UI",
     ],
     stack: ["HTML", "CSS", "JavaScript", "React"],
   },
 ];
-
 export default function Experience() {
   return (
     <SectionWrapper id="experience">
       <SectionHeading
-        tag="// experience"
+        tag=" experience"
         title="My"
         highlight="Journey"
         subtitle="From self-taught coder to professional developer — here's how it happened."

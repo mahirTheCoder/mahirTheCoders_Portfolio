@@ -45,7 +45,7 @@ export default function Contact() {
   return (
     <SectionWrapper id="contact">
       <SectionHeading
-        tag="// contact"
+        tag="contact"
         title="Let's"
         highlight="Connect"
         subtitle="Have a project in mind? I'd love to hear about it. Let's build something great together."

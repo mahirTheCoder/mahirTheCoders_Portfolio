@@ -20,7 +20,9 @@ export default function Footer() {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer
+    
+<section className="Footer">
+      <footer
       style={{
         background: "hsl(var(--background-2))",
         borderTop: "1px solid hsl(var(--border))",
@@ -103,10 +105,8 @@ export default function Footer() {
           className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8"
           style={{ borderTop: "1px solid hsl(var(--border))" }}
         >
-          <p className="text-muted-foreground text-sm flex items-center gap-1.5">
-            © {new Date().getFullYear()} mahirTheCoder. Made with
-            <Heart size={13} className="inline" style={{ color: "hsl(0 80% 60%)" }} fill="hsl(0 80% 60%)" />
-            in React.
+          <p className="text-muted-foreground text-xs flex items-center text-center gap-1.5">
+          <span>© {new Date().getFullYear()} mahirTheCoder. Made with in react</span>
           </p>
 
 
@@ -126,5 +126,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+</section>
   );
 }
