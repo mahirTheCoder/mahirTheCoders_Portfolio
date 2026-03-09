@@ -90,10 +90,10 @@ function OrbitParticles() {
 
 /* ---- Typing animation hook ---- */
 const roles = [
-  "React Developer",
+  "React and Next.js Developer",
   "Frontend Developer",
-  "UI/UX Enthusiast",
   "Full Stack Explorer",
+  "UI/UX Enthusiast",
 ];
 
 function useTyping() {

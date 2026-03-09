@@ -106,7 +106,7 @@ export default function Footer() {
           style={{ borderTop: "1px solid hsl(var(--border))" }}
         >
           <p className="text-muted-foreground text-xs flex items-center text-center gap-1.5">
-          <span>© {new Date().getFullYear()} mahirTheCoder. Made with in react</span>
+          <span>© {new Date().getFullYear()} mahirTheCoder. Made with in React🖤</span>
           </p>
 
 
