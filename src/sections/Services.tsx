@@ -52,7 +52,7 @@ export default function Services() {
   return (
     <SectionWrapper id="services">
       <SectionHeading
-        tag="// services"
+        tag=" services"
         title="What I"
         highlight="Offer"
         subtitle="End-to-end frontend expertise — from design system to deployment."
