@@ -304,8 +304,8 @@ export default function Hero() {
               className="flex gap-8"
             >
               {[
-                { value: "10+", label: "Projects Built" },
-                { value: "2+", label: "Years Coding" },
+                { value: "8+", label: "Projects Built" },
+                { value: "1+", label: "Years Coding" },
                 { value: "10+", label: "Tech Skills" },
               ].map((stat, i) => (
                 <motion.div

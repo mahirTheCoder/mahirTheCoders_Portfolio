@@ -7,9 +7,9 @@ import profileImg from "@/assets/profile.jpg";
 
 // ------------data
 const stats = [
-  { value: "10+", label: "Projects Shipped" },
+  { value: "8+", label: "Projects Shipped" },
   { value: "1+", label: "Years Experience" },
-  { value: "10+", label: "Happy Clients" },
+  { value: "8+", label: "Happy Clients" },
   { value: "99%", label: "On-time Delivery" },
 ];
 
