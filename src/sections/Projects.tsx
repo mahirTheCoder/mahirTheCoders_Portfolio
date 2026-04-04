@@ -9,6 +9,7 @@ import projectEcommerce from "@/assets/project-ecommerce.jpg";
 import projectBuilder from "@/assets/project-builder.jpg";
 import projectKanban from "@/assets/project-kanban.jpg";
 import project3dLanding from "@/assets/project-3d-landing.jpg";
+import bushu from "@/assets/Bushu's.png";
 
 const projects = [
   {
@@ -22,27 +23,28 @@ const projects = [
     featured: true,
     image: projectDashboard,
   },
-  {
-    id: 2,
-    title: "AI Chat Interface",
-    desc: "Modern conversational UI with streaming responses, code highlighting, markdown rendering and smooth animations.",
-    tags: ["React", "OpenAI API", "Framer Motion", "Zustand"],
-    color: "hsl(262 70% 58%)",
-    demo: "#",
-    github: "https://github.com/mahirTheCoder",
-    featured: true,
-    image: projectAiChat,
-  },
+
+  // {
+  //   id: 2,
+  //   title: "AI Chat Interface",
+  //   desc: "Modern conversational UI with streaming responses, code highlighting, markdown rendering and smooth animations.",
+  //   tags: ["React", "OpenAI API", "Framer Motion", "Zustand"],
+  //   color: "hsl(262 70% 58%)",
+  //   demo: "#",
+  //   github: "https://github.com/mahirTheCoder",
+  //   featured: true,
+  //   image: projectAiChat,
+  // },
   {
     id: 3,
     title: "E-Commerce Store",
     desc: "Full-featured shopping experience with cart management, product filters, payment integration, and mobile-first design.",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+    tags: ["React", "TypeScript", "Tailwind", ],
     color: "hsl(142 70% 45%)",
-    demo: "#",
-    github: "https://github.com/mahirTheCoder",
+    demo: "https://wear-store.vercel.app/",
+    github: "https://github.com/mahirTheCoder/Bushu-s-Wear.git",
     featured: false,
-    image: projectEcommerce,
+    image: bushu,
   },
   {
     id: 4,
