@@ -11,6 +11,7 @@ import projectKanban from "@/assets/project-kanban.jpg";
 import project3dLanding from "@/assets/project-3d-landing.jpg";
 import bushu from "@/assets/Bushu's.png";
 import next from "@/assets/next.png";
+import can from "@/assets/can.png";
 
 const projects = [
   {
@@ -51,12 +52,23 @@ const projects = [
     id: 3,
     title: "Nextone E-Commerce Store",
     desc: "Full-featured shopping experience with cart management, product filters, payment integration, and mobile-first design.",
-    tags: ["React", "TypeScript", "Tailwind", ],
+    tags: ["React",  "Tailwind", ],
     color: "hsl(142 70% 45%)",
     demo: "https://nexton-e-commerce-eosin.vercel.app/",
     github: "https://github.com/mahirTheCoder/Nexton-E-commerce.git",
     featured: false,
     image: next,
+  },
+  {
+    id: 4,
+    title: "Candle E-Commerce shop",
+    desc: "Full-featured shopping experience with cart management, product filters, payment integration, and mobile-first design.",
+    tags: ["React", "Tailwind", ],
+    color: "hsl(142 70% 45%)",
+    demo: "https://candle-xi-tan.vercel.app/",
+    github: "https://github.com/mahirTheCoder/candle.git",
+    featured: false,
+    image: can,
   },
   {
     id: 4,
