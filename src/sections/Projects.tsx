@@ -10,6 +10,7 @@ import projectBuilder from "@/assets/project-builder.jpg";
 import projectKanban from "@/assets/project-kanban.jpg";
 import project3dLanding from "@/assets/project-3d-landing.jpg";
 import bushu from "@/assets/Bushu's.png";
+import next from "@/assets/next.png";
 
 const projects = [
   {
@@ -36,8 +37,8 @@ const projects = [
   //   image: projectAiChat,
   // },
   {
-    id: 3,
-    title: "E-Commerce Store",
+    id: 2,
+    title: "Bushu's Wear E-Commerce Store",
     desc: "Full-featured shopping experience with cart management, product filters, payment integration, and mobile-first design.",
     tags: ["React", "TypeScript", "Tailwind", ],
     color: "hsl(142 70% 45%)",
@@ -45,6 +46,17 @@ const projects = [
     github: "https://github.com/mahirTheCoder/Bushu-s-Wear.git",
     featured: false,
     image: bushu,
+  },
+  {
+    id: 3,
+    title: "Nextone E-Commerce Store",
+    desc: "Full-featured shopping experience with cart management, product filters, payment integration, and mobile-first design.",
+    tags: ["React", "TypeScript", "Tailwind", ],
+    color: "hsl(142 70% 45%)",
+    demo: "https://nexton-e-commerce-eosin.vercel.app/",
+    github: "https://github.com/mahirTheCoder/Nexton-E-commerce.git",
+    featured: false,
+    image: next,
   },
   {
     id: 4,
