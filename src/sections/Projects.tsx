@@ -13,6 +13,7 @@ import bushu from "@/assets/Bushu's.png";
 import next from "@/assets/next.png";
 import can from "@/assets/can.png";
 import lux from "@/assets/Lux.png";
+import fur from "@/assets/furniture.png";
 
 const projects = [
   {
@@ -72,10 +73,10 @@ const projects = [
     image: can,
   },
   {
-    id: 4,
-    title: "LUXDRIVE landing page ",
+    id: 5,
+    title: "LUXDRIVE Landing page ",
     desc: "Drive Premium. Ride in Style Experience luxury cars with effortless booking and unmatched comfort Your perfect ride is just one click away.",
-    tags: ["React", "DnD Kit", "Vite", "TypeScript"],
+    tags: ["React",  "Vite", "tailwind", ],
     color: "hsl(30 90% 55%)",
     demo: "https://luxdrive-ueuq.vercel.app/",
     github: "https://github.com/mahirTheCoder/LUXDRIVE.git",
@@ -83,27 +84,27 @@ const projects = [
     image: lux,
   },
   {
-    id: 5,
-    title: "Real-time Kanban",
-    desc: "Collaborative task management board with drag-and-drop, real-time sync, team invite links, and file attachments.",
-    tags: ["React", "Supabase", "DnD Kit", "React Query"],
-    color: "hsl(192 80% 55%)",
-    demo: "#",
-    github: "https://github.com/mahirTheCoder",
-    featured: false,
-    image: projectKanban,
-  },
-  {
     id: 6,
-    title: "3D Landing Page",
-    desc: "Immersive marketing landing page with Three.js background, scroll-triggered reveals, and parallax effects.",
-    tags: ["React", "Three.js", "GSAP", "Tailwind"],
-    color: "hsl(340 80% 55%)",
-    demo: "#",
-    github: "https://github.com/mahirTheCoder",
+    title: "Furniture Landing page",
+    desc: " Developed a modern and fully responsive furniture website using HTML, CSS, and JavaScript., Focused on clean UI design, smooth user experience, and cross-device compatibility.",
+    tags: ["HTML", "CSS", "JavaScript","Bootstrap", "Responsive Design"],
+    color: "hsl(192 80% 55%)",
+    demo: "https://mahirthecoder.github.io/project_-furniture/",
+    github: "https://github.com/mahirTheCoder/project_-furniture.git",
     featured: false,
-    image: project3dLanding,
+    image: fur,
   },
+  // {
+  //   id: 6,
+  //   title: "3D Landing Page",
+  //   desc: "Immersive marketing landing page with Three.js background, scroll-triggered reveals, and parallax effects.",
+  //   tags: ["React", "Three.js", "GSAP", "Tailwind"],
+  //   color: "hsl(340 80% 55%)",
+  //   demo: "#",
+  //   github: "https://github.com/mahirTheCoder",
+  //   featured: false,
+  //   image: project3dLanding,
+  // },
 ];
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
