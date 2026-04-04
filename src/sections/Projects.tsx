@@ -12,6 +12,7 @@ import project3dLanding from "@/assets/project-3d-landing.jpg";
 import bushu from "@/assets/Bushu's.png";
 import next from "@/assets/next.png";
 import can from "@/assets/can.png";
+import lux from "@/assets/Lux.png";
 
 const projects = [
   {
@@ -72,14 +73,14 @@ const projects = [
   },
   {
     id: 4,
-    title: "Portfolio Builder",
-    desc: "Drag-and-drop portfolio website builder with live preview, component library, and one-click deployment.",
+    title: "LUXDRIVE landing page ",
+    desc: "Drive Premium. Ride in Style Experience luxury cars with effortless booking and unmatched comfort Your perfect ride is just one click away.",
     tags: ["React", "DnD Kit", "Vite", "TypeScript"],
     color: "hsl(30 90% 55%)",
-    demo: "#",
-    github: "https://github.com/mahirTheCoder",
+    demo: "https://luxdrive-ueuq.vercel.app/",
+    github: "https://github.com/mahirTheCoder/LUXDRIVE.git",
     featured: false,
-    image: projectBuilder,
+    image: lux,
   },
   {
     id: 5,
