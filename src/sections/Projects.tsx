@@ -7,7 +7,7 @@ import projectDashboard from "@/assets/project-dashboard.jpg";
 import projectAiChat from "@/assets/project-ai-chat.jpg";
 import projectEcommerce from "@/assets/project-ecommerce.jpg";
 import projectBuilder from "@/assets/project-builder.jpg";
-import projectKanban from "@/assets/project-kanban.jpg";
+import quick from "@/assets/quick.png";
 import restu from "@/assets/restu.png";
 import bushu from "@/assets/Bushu's.png";
 import next from "@/assets/next.png";
@@ -18,14 +18,14 @@ import fur from "@/assets/furniture.png";
 const projects = [
   {
     id: 1,
-    title: "DevSpace Dashboard",
-    desc: "A feature-rich developer analytics dashboard with real-time data visualisation, dark/light themes, and interactive charts.",
+    title: "Quick Sell BD fashion e-commerce website",
+    desc: "A modern e-commerce platform for selling fashion items online.",
     tags: ["React", "TypeScript", "Recharts", "Tailwind"],
     color: "hsl(192 100% 50%)",
-    demo: "#",
-    github: "https://github.com/mahirTheCoder",
+    demo: "https://quick-sell-bd.vercel.app/",
+    github: "https://github.com/mahirTheCoder/Quick_Sell_BD.git",
     featured: true,
-    image: projectDashboard,
+    image: quick,
   },
 
   // {
@@ -62,7 +62,7 @@ const projects = [
     image: restu,
   },
   {
-    id: 3,
+    id: 4,
     title: "Nextone E-Commerce Store",
     desc: "Full-featured shopping experience with cart management, product filters, payment integration, and mobile-first design.",
     tags: ["React", "Vite",  "Tailwind", ],
@@ -73,7 +73,7 @@ const projects = [
     image: next,
   },
   {
-    id: 4,
+    id: 5,
     title: "Candle E-Commerce shop",
     desc: "Full-featured shopping experience with cart management, product filters, payment integration, and mobile-first design.",
     tags: ["React","Vite", "Tailwind", ],
@@ -84,7 +84,7 @@ const projects = [
     image: can,
   },
   {
-    id: 5,
+    id: 6,
     title: "LUXDRIVE Landing page ",
     desc: "Drive Premium. Ride in Style Experience luxury cars with effortless booking and unmatched comfort Your perfect ride is just one click away.",
     tags: ["React",  "Vite", "tailwind", ],
