@@ -16,8 +16,8 @@ export const defaultSkills: Skill[] = [
   { name: "TypeScript",   level: 50, color: "hsl(211 95% 50%)",   icon: "TS", category: "frontend" },
   { name: "Tailwind CSS", level: 90, color: "hsl(199 89% 42%)",   icon: "🌊", category: "frontend" },
   { name: "Next.js",      level: 78, color: "hsl(220 15% 48%)",   icon: "▲",  category: "frontend" },
-  { name: "Node.js",      level: 15, color: "hsl(142 70% 38%)",   icon: "⬡",  category: "backend"  },
-  { name: "REST APIs",    level: 10, color: "hsl(262 60% 55%)",   icon: "🌐", category: "backend"  },
+  { name: "Node.js",      level: 80, color: "hsl(142 70% 38%)",   icon: "⬡",  category: "backend"  },
+  { name: "REST APIs",    level: 80, color: "hsl(262 60% 55%)",   icon: "🌐", category: "backend"  },
   { name: "Git / GitHub", level: 88, color: "hsl(20 80% 48%)",    icon: "⎇",  category: "tools"    },
 ];
 

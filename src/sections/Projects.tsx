@@ -8,7 +8,7 @@ import projectAiChat from "@/assets/project-ai-chat.jpg";
 import projectEcommerce from "@/assets/project-ecommerce.jpg";
 import projectBuilder from "@/assets/project-builder.jpg";
 import projectKanban from "@/assets/project-kanban.jpg";
-import project3dLanding from "@/assets/project-3d-landing.jpg";
+import restu from "@/assets/restu.png";
 import bushu from "@/assets/Bushu's.png";
 import next from "@/assets/next.png";
 import can from "@/assets/can.png";
@@ -49,6 +49,17 @@ const projects = [
     github: "https://github.com/mahirTheCoder/Bushu-s-Wear.git",
     featured: false,
     image: bushu,
+  },
+  {
+    id: 3,
+    title: "FoodZoone_BD Resturant Website",
+    desc: "Full-featured shopping experience with cart management, product filters, payment integration, and mobile-first design.",
+    tags: ["React", "Vite", "TypeScript", "Tailwind", ],
+    color: "hsl(142 70% 45%)",
+    demo: "https://khabarbari.vercel.app/",
+    github: "https://github.com/mahirTheCoder/Foodie.git",
+    featured: false,
+    image: restu,
   },
   {
     id: 3,
