@@ -3,19 +3,20 @@ import { useEffect, useState } from "react";
 
 export default function Preloader() {
   const [visible, setVisible] = useState(true);
-  const [count, setCount] = useState(0);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCount((prev) => {
+      setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
           setTimeout(() => setVisible(false), 400);
           return 100;
         }
-        return prev + 2;
+        return prev + 1.5;
       });
-    }, 25);
+    }, 20);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -23,61 +24,99 @@ export default function Preloader() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center"
-          style={{ background: "hsl(var(--background))" }}
-          exit={{ opacity: 0, scale: 1.05 }}
-          transition={{ duration: 0.5 }}
+          className="fixed inset-0 z-[9999] bg-black overflow-hidden flex items-center justify-center"
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.6 }}
         >
-          {/* Animated rings */}
-          <div className="relative flex items-center justify-center mb-8">
-            {[80, 120, 160].map((size, i) => (
+          {/* ⚡ Electric sweep line */}
+          <motion.div
+            className="absolute top-0 left-0 h-full w-[2px] bg-cyan-400"
+            animate={{
+              x: ["-10%", "110%"],
+            }}
+            transition={{
+              duration: 1.2,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            style={{
+              boxShadow: "0 0 20px #22d3ee, 0 0 60px #22d3ee",
+            }}
+          />
+
+          {/* ⚡ Lightning fragments */}
+          {[...Array(15)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute h-[2px] bg-cyan-300"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                width: `${20 + Math.random() * 60}px`,
+              }}
+              animate={{
+                opacity: [0, 1, 0],
+                x: [0, 40, -20],
+              }}
+              transition={{
+                duration: 0.4,
+                repeat: Infinity,
+                delay: i * 0.1,
+              }}
+            />
+          ))}
+
+          {/* ⚡ Main Content */}
+          <div className="relative z-10 text-center">
+            <motion.h1
+              className="text-cyan-400 text-3xl font-bold tracking-widest"
+              animate={{
+                textShadow: [
+                  "0 0 5px #22d3ee",
+                  "0 0 25px #22d3ee",
+                  "0 0 5px #22d3ee",
+                ],
+              }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              mahirTheCoder
+            </motion.h1>
+
+            <p className="text-gray-400 text-sm font-mono mt-2 mb-6">
+              Initializing Energy Flow...
+            </p>
+
+            {/* ⚡ Progress line */}
+            <div className="w-80 h-[3px] bg-gray-800 relative overflow-hidden rounded-full">
               <motion.div
-                key={size}
-                className="absolute rounded-full border border-primary/30"
-                style={{ width: size, height: size }}
-                animate={{ rotate: 360, scale: [1, 1.05, 1] }}
+                className="h-full bg-cyan-400"
+                style={{ width: `${progress}%` }}
+              />
+
+              {/* glowing moving spark */}
+              <motion.div
+                className="absolute top-0 h-full w-10 bg-gradient-to-r from-transparent via-white/60 to-transparent"
+                animate={{
+                  x: ["-100%", "300%"],
+                }}
                 transition={{
-                  rotate: { duration: 3 - i * 0.5, repeat: Infinity, ease: "linear" },
-                  scale: { duration: 2, repeat: Infinity, delay: i * 0.3 },
+                  duration: 0.8,
+                  repeat: Infinity,
+                  ease: "linear",
                 }}
               />
-            ))}
-            {/* Center logo */}
-            <div className="relative z-10 flex items-center justify-center w-16 h-16 rounded-full border border-primary/50"
-              style={{ background: "hsl(var(--card))" }}>
-              <span className="gradient-text font-display font-bold text-xl">M</span>
             </div>
-          </div>
 
-          {/* Name */}
-          <motion.div
-            className="text-center mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-          >
-            <h1 className="font-display font-bold text-2xl gradient-text tracking-widest">
-              mahirTheCoder
-            </h1>
-            <p className="text-muted-foreground text-sm font-mono mt-1">Initializing...</p>
-          </motion.div>
-
-          {/* Progress bar */}
-          <div className="w-64 h-1 rounded-full overflow-hidden" style={{ background: "hsl(var(--muted))" }}>
-            <motion.div
-              className="h-full rounded-full"
-              style={{
-                background: "linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)))",
-                width: `${count}%`,
-              }}
-              transition={{ ease: "linear" }}
-            />
+            <motion.span
+              className="text-cyan-400 font-mono text-xs mt-3 block"
+              animate={{ opacity: [0.4, 1, 0.4] }}
+              transition={{ duration: 1, repeat: Infinity }}
+            >
+              {Math.floor(progress)}%
+            </motion.span>
           </div>
-          <span className="text-primary font-mono text-xs mt-2">{count}%</span>
         </motion.div>
       )}
     </AnimatePresence>
-
-    
   );
 }
