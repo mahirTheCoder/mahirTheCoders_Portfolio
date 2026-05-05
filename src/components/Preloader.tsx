@@ -77,5 +77,7 @@ export default function Preloader() {
         </motion.div>
       )}
     </AnimatePresence>
+
+    
   );
 }
